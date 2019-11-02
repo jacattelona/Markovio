@@ -20,7 +20,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         // generate ground
         for (int x = 0; x < model.getWidth(); x++){
             if (x == 30 || x == 90){
-                //x += generatePipePit(x, groundHeight, model);
+                x += generatePlatformPit(x, groundHeight, model);
             }
             else if (x == 60){
                 //x += generatePit(x, groundHeight, model);
@@ -66,8 +66,8 @@ public class LevelGenerator implements MarioLevelGenerator{
         Random r = new Random();
         int width = r.nextInt(4)+3;
         for (int y = yLoc; y < model.getHeight(); y++){
-            model.setBlock(xLoc, y, MarioLevelModel.NORMAL_BRICK);
-            model.setBlock(xLoc + width, y, MarioLevelModel.NORMAL_BRICK);
+            model.setBlock(xLoc, y, MarioLevelModel.GROUND);
+            model.setBlock(xLoc + width, y, MarioLevelModel.GROUND);
         }
         return width;
     }
@@ -84,8 +84,8 @@ public class LevelGenerator implements MarioLevelGenerator{
         int currentY = yLoc;
 
         for (int y = yLoc; y < model.getHeight(); y++){
-            model.setBlock(xLoc, y, MarioLevelModel.NORMAL_BRICK);
-            model.setBlock(xLoc + width, y, MarioLevelModel.NORMAL_BRICK);
+            model.setBlock(xLoc, y, MarioLevelModel.GROUND);
+            model.setBlock(xLoc + width, y, MarioLevelModel.GROUND);
         }
 
         for (int x = xLoc + 3; x < xLoc + width - 2; x += r.nextInt(3)+3){
@@ -125,5 +125,30 @@ public class LevelGenerator implements MarioLevelGenerator{
         }
 
         return size;
+    }
+
+    int generatePlatformPit(int xLoc, int yLoc, MarioLevelModel model){
+        Random r = new Random();
+        int width = r.nextInt(15) + 15;
+        int currentY = yLoc;
+
+        for (int y = yLoc; y < model.getHeight(); y++){
+            model.setBlock(xLoc, y, MarioLevelModel.GROUND);
+            model.setBlock(xLoc + width, y, MarioLevelModel.GROUND);
+        }
+
+        for (int x = xLoc + 3; x < xLoc + width - 2; x += r.nextInt(3)+3){
+            int heightDiff = r.nextInt(7)-3;
+
+            currentY += heightDiff;
+            if (currentY > 15)
+                currentY = 15;
+
+            int plat_width = r.nextInt(8)+2;
+            model.setRectangle(x, currentY, plat_width, 1, MarioLevelModel.PLATFORM);
+            model.setRectangle(x, currentY+1, plat_width, model.getHeight() - currentY, MarioLevelModel.PLATFORM_BACKGROUND);
+        }
+
+        return width;
     }
 }

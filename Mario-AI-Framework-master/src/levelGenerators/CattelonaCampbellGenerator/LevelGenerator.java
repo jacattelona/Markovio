@@ -8,6 +8,8 @@ import engine.core.MarioLevelModel;
 import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
+    Random rand;
+
     private int groundHeight = 12;
 
     public LevelGenerator(){

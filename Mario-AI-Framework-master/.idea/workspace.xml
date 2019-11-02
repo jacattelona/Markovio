@@ -37,7 +37,7 @@
       <file leaf-file-name="LevelGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/benWeber/LevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
+            <state relative-caret-position="171">
               <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -59,13 +59,23 @@
       <file leaf-file-name="LevelGenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+            <state relative-caret-position="129">
+              <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#653#654#0" expanded="true" />
-                <element signature="e#704#705#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
+                <element signature="e#833#834#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lvl-1.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/levels/original/lvl-1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,6 +145,17 @@
             <path>
               <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mario-AI-Framework-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mario-AI-Framework-master" type="462c0819:PsiDirectoryNode" />
+              <item name="levels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mario-AI-Framework-master" type="462c0819:PsiDirectoryNode" />
+              <item name="levels" type="462c0819:PsiDirectoryNode" />
+              <item name="original" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
@@ -430,21 +451,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/levelGenerators/linear/LevelGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="140" column="4" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/levels/ore/lvl-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/levels/original/lvl-1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PlayLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/levelGenerators/benWeber/LevelGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -458,11 +493,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/levelGenerators/linear/LevelGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/levelGenerators/benWeber/LevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="140" column="4" lean-forward="true" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="74" />
-          <folding />
+        <state relative-caret-position="171">
+          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -476,12 +513,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="21" column="45" lean-forward="false" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="129">
+          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
           </folding>
         </state>
       </provider>

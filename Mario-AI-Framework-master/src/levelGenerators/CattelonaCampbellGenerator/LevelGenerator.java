@@ -20,10 +20,10 @@ public class LevelGenerator implements MarioLevelGenerator{
         // generate ground
         for (int x = 0; x < model.getWidth(); x++){
             if (x == 30 || x == 90){
-                x += generatePipePit(x, groundHeight, model);
+                //x += generatePipePit(x, groundHeight, model);
             }
             else if (x == 60){
-                x += generatePit(x, groundHeight, model);
+                //x += generatePit(x, groundHeight, model);
             }
             else{
                 for (int y = groundHeight; y < model.getHeight(); y++){
@@ -49,7 +49,7 @@ public class LevelGenerator implements MarioLevelGenerator{
                 x+=12;
             }
             if (x == 45){
-                x+= generatePyramid(x, groundHeight-1, 4, false, true, model);
+                x+= generatePyramid(x, groundHeight-1, 4, true, true, model);
             }
 
 
@@ -111,9 +111,10 @@ public class LevelGenerator implements MarioLevelGenerator{
 
         if(mirror) {
             if(pit){
-                model.setBlock(xLoc+size, yLoc+1, MarioLevelModel.EMPTY);
-                model.setBlock(xLoc+size+1, yLoc+1, MarioLevelModel.EMPTY);
-                //for (int i = groundHeight; i < model.getHeight(); )
+                for (int i = groundHeight; i < model.getHeight(); i++){
+                    model.setBlock(xLoc+size, i, MarioLevelModel.EMPTY);
+                    model.setBlock(xLoc+size+1, i, MarioLevelModel.EMPTY);
+                }
             }
             for (int i = 0; i < size; i++){
                 for (int j = 0; j < size - i; j++){

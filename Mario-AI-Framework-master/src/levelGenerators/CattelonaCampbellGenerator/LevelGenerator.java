@@ -32,15 +32,28 @@ public class LevelGenerator implements MarioLevelGenerator{
             }
         }
 
-        /*
         // generate platforms
         for (int x = 0; x < model.getWidth(); x++){
-            if (x%5 == 0){
+            if (x == 5){
                 generatePlatform(x, groundHeight-4, 5, model);
                 x+=5;
             }
+            if (x == 15){
+                generatePlatform(x, groundHeight-4, 5, model);
+                generatePlatform(x+2, groundHeight-7, 1, model);
+                x+=5;
+            }
+            if (x == 25){
+                generatePlatform(x, groundHeight-4, 3, model);
+                generatePlatform(x+5, groundHeight-8, 8, model);
+                x+=12;
+            }
+            if (x == 45){
+                x+= generatePyramid(x, groundHeight-1, 4, false, true, model);
+            }
+
+
         }
-        */
         model.setBlock(1, 5, MarioLevelModel.MARIO_START);
         return model.getMap();
     }
@@ -87,5 +100,29 @@ public class LevelGenerator implements MarioLevelGenerator{
         }
 
         return width;
+    }
+
+    int generatePyramid(int xLoc, int yLoc, int size, boolean mirror, boolean pit, MarioLevelModel model){
+        for (int i = 0; i < size; i++){
+            for (int j = 0; j < size - i; j++){
+                model.setBlock(xLoc+j+i, yLoc-i, MarioLevelModel.PYRAMID_BLOCK);
+            }
+        }
+
+        if(mirror) {
+            if(pit){
+                model.setBlock(xLoc+size, yLoc+1, MarioLevelModel.EMPTY);
+                model.setBlock(xLoc+size+1, yLoc+1, MarioLevelModel.EMPTY);
+                //for (int i = groundHeight; i < model.getHeight(); )
+            }
+            for (int i = 0; i < size; i++){
+                for (int j = 0; j < size - i; j++){
+                    model.setBlock(xLoc+size+2+j, yLoc-i, MarioLevelModel.PYRAMID_BLOCK);
+                }
+            }
+            return (size * 2) + 2;
+        }
+
+        return size;
     }
 }

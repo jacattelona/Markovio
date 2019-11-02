@@ -9,8 +9,18 @@ import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
 
+    public LevelGenerator(){
+
+    }
+
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer){
-        return "";
+
+        for (int x = 0; x < model.getWidth(); x++){
+            model.setBlock(x, 15, MarioLevelModel.NORMAL_BRICK);
+        }
+
+        model.setBlock(1, 5, MarioLevelModel.MARIO_START);
+        return model.getMap();
     }
 
     public String getGeneratorName(){

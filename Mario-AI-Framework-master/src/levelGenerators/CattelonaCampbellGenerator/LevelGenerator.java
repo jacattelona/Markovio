@@ -20,13 +20,16 @@ public class LevelGenerator implements MarioLevelGenerator{
         // generate ground
         for (int x = 0; x < model.getWidth(); x++){
             if (x == 30){
-                generatePit(x, groundHeight, 5, model);
-                x+=5;
+                //generatePit(x, groundHeight, 5, model);
+                //x+=5;
+                x += generatePipePit(x, groundHeight, model);
+
             }
             else
                 model.setBlock(x, groundHeight, MarioLevelModel.NORMAL_BRICK);
         }
 
+        /*
         // generate platforms
         for (int x = 0; x < model.getWidth(); x++){
             if (x%5 == 0){
@@ -34,7 +37,7 @@ public class LevelGenerator implements MarioLevelGenerator{
                 x+=5;
             }
         }
-
+        */
         model.setBlock(1, 5, MarioLevelModel.MARIO_START);
         return model.getMap();
     }
@@ -54,5 +57,26 @@ public class LevelGenerator implements MarioLevelGenerator{
         for (int x = 0; x < width; x++){
             model.setBlock(xLoc+x, yLoc, MarioLevelModel.NORMAL_BRICK);
         }
+    }
+
+    int generatePipePit(int xLoc, int yLoc, MarioLevelModel model){
+        Random r = new Random();
+        int width = r.nextInt(15) + 15;
+        int currentY = yLoc;
+
+        for (int y = yLoc; y < model.getHeight(); y++){
+            model.setBlock(xLoc, y, MarioLevelModel.NORMAL_BRICK);
+            model.setBlock(xLoc + width, y, MarioLevelModel.NORMAL_BRICK);
+        }
+
+        for (int x = xLoc + 3; x < xLoc + width - 2; x += r.nextInt(3)+3){
+            int heightDiff = r.nextInt(7)-3;
+            currentY += heightDiff;
+
+            model.setRectangle(x, currentY, 2, model.getHeight() - currentY, MarioLevelModel.PIPE);
+
+        }
+
+        return width;
     }
 }

@@ -13,7 +13,7 @@ public class LevelGenerator implements MarioLevelGenerator{
     private int groundHeight = 12;
 
     public LevelGenerator(){
-
+   
     }
 
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer){

@@ -24,7 +24,7 @@ public class LevelGenerator implements MarioLevelGenerator{
             if (x == 90){
                 x += generatePlatformPit(x, groundHeight, model);
             }
-            else if (x == 60){
+            else if (x > 0 && x%30 == 0){
                 x += generatePit(x, groundHeight, model);
             }
             else{
@@ -33,14 +33,14 @@ public class LevelGenerator implements MarioLevelGenerator{
                 }
             }
 
-            if (x == 20){
-                generateRandomEnemies(x, groundHeight, 3, model);
+            if (x > 0 && x%20 == 0){
+                generateRandomEnemies(x, groundHeight, 2, model);
             }
         }
 
         // generate platforms
         for (int x = 0; x < model.getWidth(); x++){
-            if (x > 0 && x%50 == 0)
+            if (x > 0 && x%15 == 0)
                 x+= generateRandomPlatforms(x, groundHeight-4, model);
         }
         model.setBlock(1, 5, MarioLevelModel.MARIO_START);
@@ -51,7 +51,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         return "CattelonaCampbellGenerator";
     }
 
-    int generatePit(int xLoc, int yLoc, MarioLevelModel model){
+    private int generatePit(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
         int width = r.nextInt(4)+3;
         for (int y = yLoc; y < model.getHeight(); y++){
@@ -61,7 +61,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         return width;
     }
 
-    void generatePlatform(int xLoc, int yLoc, int width, MarioLevelModel model){
+    private void generatePlatform(int xLoc, int yLoc, int width, MarioLevelModel model){
         rand = new Random();
         for (int x = 0; x < width; x++){
             if (rand.nextDouble() < CHANCE_BLOCK_POWER_UP) {
@@ -80,7 +80,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         }
     }
 
-    int generatePipePit(int xLoc, int yLoc, MarioLevelModel model){
+    private int generatePipePit(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
         int width = r.nextInt(15) + 15;
         int currentY = yLoc;
@@ -104,7 +104,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         return width;
     }
 
-    int generatePyramid(int xLoc, int yLoc, int size, boolean mirror, boolean pit, MarioLevelModel model){
+    private int generatePyramid(int xLoc, int yLoc, int size, boolean mirror, boolean pit, MarioLevelModel model){
         for (int i = 0; i < size; i++){
             for (int j = 0; j < size - i; j++){
                 model.setBlock(xLoc+j+i, yLoc-i, MarioLevelModel.PYRAMID_BLOCK);
@@ -129,7 +129,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         return size;
     }
 
-    int generatePlatformPit(int xLoc, int yLoc, MarioLevelModel model){
+    private int generatePlatformPit(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
         int width = r.nextInt(15) + 15;
         int currentY = yLoc;
@@ -154,7 +154,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         return width;
     }
 
-    int generatePipe(int xLoc, int yLoc, MarioLevelModel model){
+    private int generatePipe(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
         int height = r.nextInt(3)+2;
         model.setRectangle(xLoc, yLoc-height, 2, height, MarioLevelModel.PIPE);
@@ -162,13 +162,13 @@ public class LevelGenerator implements MarioLevelGenerator{
         return 2;
     }
 
-    void generateEnemies(int xLoc, int yLoc, int number, char type, MarioLevelModel model){
+    private void generateEnemies(int xLoc, int yLoc, int number, char type, MarioLevelModel model){
         for (int i = 0; i < number; i++){
             model.setBlock(xLoc + i*3, yLoc - 1, type);
         }
     }
 
-    void generateRandomEnemies(int xLoc, int yLoc, int number, MarioLevelModel model){
+    private void generateRandomEnemies(int xLoc, int yLoc, int number, MarioLevelModel model){
         Random r = new Random();
         for (int i = 0; i < number; i++){
             char type;
@@ -205,8 +205,9 @@ public class LevelGenerator implements MarioLevelGenerator{
         }
     }
 
-    int generateRandomPlatforms(int xLoc, int yLoc, MarioLevelModel model){
+    private int generateRandomPlatforms(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
+        yLoc -= r.nextInt(3);
         int choice = r.nextInt(8);
         switch (choice) {
             case 1:

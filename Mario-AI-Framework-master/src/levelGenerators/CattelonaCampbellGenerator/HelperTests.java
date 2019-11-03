@@ -27,6 +27,10 @@ public class HelperTests {
         }
     }
 
+    void generateEnemies(int xLoc, int yLoc, MarioLevelModel model){
+
+    }
+
 
 
 }

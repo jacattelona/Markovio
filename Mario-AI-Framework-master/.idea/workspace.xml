@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a391933e-619e-479a-8b49-907b99f5c6f7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../JetBrains.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../JetBrains.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/engine/sprites/FireFlower.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/engine/sprites/FireFlower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine/sprites/FireFlower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine/sprites/FireFlower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

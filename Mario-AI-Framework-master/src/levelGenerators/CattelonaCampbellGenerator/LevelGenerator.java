@@ -86,9 +86,15 @@ public class LevelGenerator implements MarioLevelGenerator{
         rand = new Random();
         for (int x = 0; x < width; x++){
             if (rand.nextDouble() < CHANCE_BLOCK_POWER_UP) {
-                model.setBlock(xLoc+x, yLoc, MarioLevelModel.SPECIAL_QUESTION_BLOCK);
+                if (rand.nextDouble() < 0.2)
+                    model.setBlock(xLoc+x, yLoc, MarioLevelModel.SPECIAL_BRICK);
+                else
+                    model.setBlock(xLoc+x, yLoc, MarioLevelModel.SPECIAL_QUESTION_BLOCK);
             } else if (rand.nextDouble() < CHANCE_BLOCK_COIN) {
-                model.setBlock(xLoc+x, yLoc, MarioLevelModel.COIN_QUESTION_BLOCK);
+                if (rand.nextDouble() < 0.4)
+                    model.setBlock(xLoc+x, yLoc, MarioLevelModel.COIN_BRICK);
+                else
+                    model.setBlock(xLoc+x, yLoc, MarioLevelModel.COIN_QUESTION_BLOCK);
             } else {
                 model.setBlock(xLoc+x, yLoc, MarioLevelModel.NORMAL_BRICK);
             }

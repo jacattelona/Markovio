@@ -25,27 +25,27 @@
         <entry file="file://$PROJECT_DIR$/src/GenerateLevel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="24" column="83" lean-forward="true" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
+              <caret line="24" column="83" lean-forward="false" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelperTests.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelperTests.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/HelperTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="987">
+              <caret line="71" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LevelGenerator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LevelGenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="38" column="90" lean-forward="true" selection-start-line="38" selection-start-column="90" selection-end-line="38" selection-end-column="90" />
+            <state relative-caret-position="2436">
+              <caret line="123" column="66" lean-forward="false" selection-start-line="123" selection-start-column="66" selection-end-line="123" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/linear/LevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="549">
-              <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+              <caret line="149" column="5" lean-forward="false" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -97,9 +97,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GenerateLevel.java" />
-        <option value="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" />
-        <option value="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/HelperTests.java" />
         <option value="$PROJECT_DIR$/src/engine/sprites/FireFlower.java" />
+        <option value="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/HelperTests.java" />
+        <option value="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" />
       </list>
     </option>
   </component>
@@ -443,7 +443,7 @@
     <entry file="file://$PROJECT_DIR$/src/GenerateLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="24" column="83" lean-forward="true" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
+          <caret line="24" column="83" lean-forward="false" selection-start-line="24" selection-start-column="83" selection-end-line="24" selection-end-column="83" />
           <folding />
         </state>
       </provider>
@@ -451,7 +451,7 @@
     <entry file="file://$PROJECT_DIR$/src/levelGenerators/linear/LevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
-          <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+          <caret line="149" column="5" lean-forward="false" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -480,18 +480,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/HelperTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="38" column="90" lean-forward="true" selection-start-line="38" selection-start-column="90" selection-end-line="38" selection-end-column="90" />
+        <state relative-caret-position="987">
+          <caret line="71" column="5" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="71" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/HelperTests.java">
+    <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="2436">
+          <caret line="123" column="66" lean-forward="false" selection-start-line="123" selection-start-column="66" selection-end-line="123" selection-end-column="66" />
           <folding />
         </state>
       </provider>

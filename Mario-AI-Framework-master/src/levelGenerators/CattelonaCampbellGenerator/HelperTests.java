@@ -38,11 +38,32 @@ public class HelperTests {
         Random r = new Random();
         for (int i = 0; i < number; i++){
             char type;
-            int choice = 0;
+            int choice = r.nextInt(8);
 
             switch (choice){
                 case 1:
                     type = MarioLevelModel.GOOMBA_WINGED;
+                    break;
+                case 2:
+                    type = MarioLevelModel.GREEN_KOOPA;
+                    break;
+                case 3:
+                    type = MarioLevelModel.GREEN_KOOPA_WINGED;
+                    break;
+                case 4:
+                    type = MarioLevelModel.RED_KOOPA;
+                    break;
+                case 5:
+                    type = MarioLevelModel.RED_KOOPA_WINGED;
+                    break;
+                case 6:
+                    type = MarioLevelModel.SPIKY;
+                    break;
+                case 7:
+                    type = MarioLevelModel.SPIKY_WINGED;
+                    break;
+                default:
+                    type = MarioLevelModel.GOOMBA;
                     break;
             }
 

@@ -36,7 +36,7 @@ public class LevelGenerator implements MarioLevelGenerator{
             }
 
             if (x == 20){
-                generateEnemies(x, groundHeight, 3, MarioLevelModel.GOOMBA_WINGED, model);
+                generateRandomEnemies(x, groundHeight, 3, model);
             }
         }
 
@@ -170,6 +170,43 @@ public class LevelGenerator implements MarioLevelGenerator{
 
     void generateEnemies(int xLoc, int yLoc, int number, char type, MarioLevelModel model){
         for (int i = 0; i < number; i++){
+            model.setBlock(xLoc + i*3, yLoc - 1, type);
+        }
+    }
+
+    void generateRandomEnemies(int xLoc, int yLoc, int number, MarioLevelModel model){
+        Random r = new Random();
+        for (int i = 0; i < number; i++){
+            char type;
+            int choice = r.nextInt(8);
+
+            switch (choice){
+                case 1:
+                    type = MarioLevelModel.GOOMBA_WINGED;
+                    break;
+                case 2:
+                    type = MarioLevelModel.GREEN_KOOPA;
+                    break;
+                case 3:
+                    type = MarioLevelModel.GREEN_KOOPA_WINGED;
+                    break;
+                case 4:
+                    type = MarioLevelModel.RED_KOOPA;
+                    break;
+                case 5:
+                    type = MarioLevelModel.RED_KOOPA_WINGED;
+                    break;
+                case 6:
+                    type = MarioLevelModel.SPIKY;
+                    break;
+                case 7:
+                    type = MarioLevelModel.SPIKY_WINGED;
+                    break;
+                default:
+                    type = MarioLevelModel.GOOMBA;
+                    break;
+            }
+
             model.setBlock(xLoc + i*3, yLoc - 1, type);
         }
     }

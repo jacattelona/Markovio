@@ -27,8 +27,33 @@ public class HelperTests {
         }
     }
 
-    void generateEnemies(int xLoc, int yLoc, MarioLevelModel model){
+    void generateEnemies(int xLoc, int yLoc, int number, char type, MarioLevelModel model){
+        for (int i = 0; i < number; i++){
+            model.setBlock(xLoc + i*3, yLoc - 1, type);
+        }
+    }
 
+
+    void generateRandomEnemies(int xLoc, int yLoc, int number, MarioLevelModel model){
+        Random r = new Random();
+        for (int i = 0; i < number; i++){
+            char type;
+            int choice = 0;
+
+            switch (choice){
+                case 1:
+                    type = MarioLevelModel.GOOMBA_WINGED;
+                    break;
+            }
+
+            model.setBlock(xLoc + i*3, yLoc - 1, type);
+        }
+    }
+
+    void generatePipe(int xLoc, int yLoc, MarioLevelModel model){
+        Random r = new Random();
+        int height = r.nextInt(4)+1;
+        model.setRectangle(xLoc, yLoc-height, 2, height, MarioLevelModel.PIPE);
     }
 
 

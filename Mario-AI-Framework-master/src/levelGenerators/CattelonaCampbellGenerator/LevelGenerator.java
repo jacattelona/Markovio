@@ -19,8 +19,12 @@ public class LevelGenerator implements MarioLevelGenerator{
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer){
         // generate ground
         for (int x = 0; x < model.getWidth(); x++){
-            if (x == 30 || x == 90){
-                x += generatePlatformPit(x, groundHeight, model);
+            if (x == 10 || x == 90){
+                //x += generatePlatformPit(x, groundHeight, model);
+                generatePipe(x, groundHeight, model);
+                for (int y = groundHeight; y < model.getHeight(); y++){
+                    model.setBlock(x, y, MarioLevelModel.GROUND);
+                }
             }
             else if (x == 60){
                 //x += generatePit(x, groundHeight, model);
@@ -29,6 +33,10 @@ public class LevelGenerator implements MarioLevelGenerator{
                 for (int y = groundHeight; y < model.getHeight(); y++){
                     model.setBlock(x, y, MarioLevelModel.GROUND);
                 }
+            }
+
+            if (x == 20){
+                generateEnemies(x, groundHeight, 3, MarioLevelModel.GOOMBA_WINGED, model);
             }
         }
 
@@ -150,5 +158,19 @@ public class LevelGenerator implements MarioLevelGenerator{
         }
 
         return width;
+    }
+
+    int generatePipe(int xLoc, int yLoc, MarioLevelModel model){
+        Random r = new Random();
+        int height = r.nextInt(3)+2;
+        model.setRectangle(xLoc, yLoc-height, 2, height, MarioLevelModel.PIPE);
+
+        return 2;
+    }
+
+    void generateEnemies(int xLoc, int yLoc, int number, char type, MarioLevelModel model){
+        for (int i = 0; i < number; i++){
+            model.setBlock(xLoc + i*3, yLoc - 1, type);
+        }
     }
 }

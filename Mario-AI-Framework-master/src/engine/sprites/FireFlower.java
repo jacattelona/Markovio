@@ -20,10 +20,10 @@ public class FireFlower extends MarioSprite {
 	this.life = 0;
 	if (visuals) {
 	    this.graphics = new MarioImage(Assets.items, 1);
-	    this.graphics.originX = 16;
-	    this.graphics.originY = 31;
-	    this.graphics.width = 32;
-	    this.graphics.height = 32;
+	    this.graphics.originX = 8;
+	    this.graphics.originY = 15;
+	    this.graphics.width = 16;
+	    this.graphics.height = 16;
 	}
     }
 

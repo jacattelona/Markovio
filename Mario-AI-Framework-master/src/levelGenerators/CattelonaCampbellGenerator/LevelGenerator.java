@@ -8,6 +8,8 @@ import engine.core.MarioLevelModel;
 import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
+    private double CHANCE_BLOCK_COIN = 0.3;
+    private double CHANCE_BLOCK_POWER_UP = 0.1;
     Random rand;
 
     private int groundHeight = 12;
@@ -36,7 +38,7 @@ public class LevelGenerator implements MarioLevelGenerator{
             }
 
             if (x == 20){
-                generateRandomEnemies(x, groundHeight, 3, model);
+                //generateRandomEnemies(x, groundHeight, 3, model);
             }
         }
 
@@ -81,8 +83,15 @@ public class LevelGenerator implements MarioLevelGenerator{
     }
 
     void generatePlatform(int xLoc, int yLoc, int width, MarioLevelModel model){
+        rand = new Random();
         for (int x = 0; x < width; x++){
-            model.setBlock(xLoc+x, yLoc, MarioLevelModel.NORMAL_BRICK);
+            if (rand.nextDouble() < CHANCE_BLOCK_POWER_UP) {
+                model.setBlock(xLoc+x, yLoc, MarioLevelModel.SPECIAL_QUESTION_BLOCK);
+            } else if (rand.nextDouble() < CHANCE_BLOCK_COIN) {
+                model.setBlock(xLoc+x, yLoc, MarioLevelModel.COIN_QUESTION_BLOCK);
+            } else {
+                model.setBlock(xLoc+x, yLoc, MarioLevelModel.NORMAL_BRICK);
+            }
         }
     }
 

@@ -9,8 +9,8 @@ import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
 
-    final String NOTCH = "level-analysis/notchparam-level-analysis-formatted.csv";
-    final String ORIGINAL = "level-analysis/original-level-analysis-formatted.csv";
+    final String NOTCH = "src/levelGenerators/CattelonaCampbellGenerator/level-analysis/notchparam-level-analysis-formatted.csv";
+    final String ORIGINAL = "src/levelGenerators/CattelonaCampbellGenerator/level-analysis/original-level-analysis-formatted.csv";
 
     Random rand;
 

@@ -8,11 +8,15 @@ import engine.core.MarioLevelModel;
 import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
+    final String NOTCH = "level-analysis/notchparam-level-analysis-formatted.csv";
+    final String ORIGINAL = "level-analysis/original-level-analysis-formatted.csv";
+
+
     private double CHANCE_BLOCK_COIN = 0.3;
     private double CHANCE_BLOCK_POWER_UP = 0.1;
     Random rand;
     private int groundHeight = 12;
-    private String levelAnalysis = "level-analysis/notchparam-level-analysis.csv";
+    private String levelAnalysis = ORIGINAL;
 
     private double[][] probs = new double[8][7];
     private int currentState = 0;
@@ -247,14 +251,18 @@ public class LevelGenerator implements MarioLevelGenerator{
             BufferedReader csvReader = new BufferedReader(new FileReader(levelAnalysis));
             String row = "";
             int rowNum = 0;
-            while ((row = csvReader.readLine()) != null){
+            for (int i = 0; i < 8; i++){
+                row = csvReader.readLine();
+
                 String[] levelData = row.split(",");
-                //for (int i = 0; i < levelData.length; i++) {System.out.println(levelData[i]);}
-                for(int column = 0; column < levelData.length; column++){
+                for(int column = 0; column < 7; column++){
                     probs[rowNum][column] = Double.parseDouble(levelData[column]);
+                    //System.out.print(probs[rowNum][column]);
                 }
+                //System.out.println();
                 rowNum++;
             }
+
         }
         catch (FileNotFoundException e){ }
         catch (IOException e){ }
@@ -268,7 +276,7 @@ public class LevelGenerator implements MarioLevelGenerator{
         //
         //int[][] probs = new int[5][5];
         //done with level generation
-        currentState = 8;
+        //currentState = 0;
 
 
         double chance = r.nextDouble();

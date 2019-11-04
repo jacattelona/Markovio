@@ -9,6 +9,8 @@ import engine.core.MarioTimer;
 
 public class HelperTests {
 
+    int currentState = 0;
+
     void generatePipePit(int xLoc, int yLoc, MarioLevelModel model){
         Random r = new Random();
         int width = r.nextInt(10) + 10;
@@ -78,5 +80,54 @@ public class HelperTests {
     }
 
 
+    void MarkovChain(){
+        Random r = new Random();
+
+        //PROBS MUST BE FORMATTED AS FOLLOWS
+        //EACH CHANCE SHOULD BE THE SUM OF ALL CHANCES BEFORE IT, WITH THE LAST CHANCE BEING 1
+        //
+        int[][] probs = new int[5][5];
+        //done with level generation
+        currentState = 8;
+
+
+        double chance = r.nextDouble();
+
+        //Generate Pipe
+        if (chance <= probs[currentState][0]){
+            currentState = 1;
+        }
+
+        //Generate Pipe Pit
+        else if (chance > probs[currentState][0] && chance <= probs[currentState][1]){
+            currentState = 2;
+        }
+
+        //Generate Pit
+        else if (chance > probs[currentState][1] && chance <= probs[currentState][2]){
+            currentState = 3;
+        }
+
+        //Generate Platform Pit
+        else if (chance > probs[currentState][2] && chance <= probs[currentState][3]){
+            currentState = 4;
+        }
+
+        //Generate Mirrored Pyramid
+        else if (chance > probs[currentState][3] && chance <= probs[currentState][4]){
+            currentState = 5;
+        }
+
+        //Generate Pyramid
+        else if (chance > probs[currentState][4] && chance <= probs[currentState][5]){
+            currentState = 6;
+        }
+
+        //Generate Blocks
+        else if (chance > probs[currentState][5] && chance <= probs[currentState][6]){
+            currentState = 7;
+        }
+
+    }
 
 }

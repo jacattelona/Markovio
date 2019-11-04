@@ -1,5 +1,6 @@
 package levelGenerators.CattelonaCampbellGenerator;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,11 +12,11 @@ public class LevelGenerator implements MarioLevelGenerator{
     private double CHANCE_BLOCK_COIN = 0.3;
     private double CHANCE_BLOCK_POWER_UP = 0.1;
     Random rand;
-
     private int groundHeight = 12;
+    private String levelAnalysis = "level-analysis/notchparam-level-analysis.csv";
 
-    public LevelGenerator(){
-   
+    public LevelGenerator() {
+        readCSV();
     }
 
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer){
@@ -237,5 +238,18 @@ public class LevelGenerator implements MarioLevelGenerator{
                 break;
         }
         return 0;
+    }
+
+    private void readCSV() {
+        try{
+            BufferedReader csvReader = new BufferedReader(new FileReader(levelAnalysis));
+            String row = "";
+            while ((row = csvReader.readLine()) != null){
+                String[] levelData = row.split(",");
+                //for (int i = 0; i < levelData.length; i++) {System.out.println(levelData[i]);}
+            }
+        }
+        catch (FileNotFoundException e){ }
+        catch (IOException e){ }
     }
 }

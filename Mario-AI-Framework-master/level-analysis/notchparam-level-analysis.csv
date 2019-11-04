@@ -1,0 +1,7 @@
+,Start,Ground,Platform Pit,Pipe,Pit,Pyramid Pit,block Ground
+Ground,4,47,53,0,12,11,0
+Platform Pit,11,48,0,2,0,0,5
+Pipe,0,1,0,0,0,0,1
+Pit,0,13,0,0,0,0,0
+Pyramid Pit,0,11,0,0,0,0,0
+block ground,0,3,2,0,1,0,0

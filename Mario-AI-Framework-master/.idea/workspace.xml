@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a391933e-619e-479a-8b49-907b99f5c6f7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1T7vy8oH1DwHKipVm2Qwkn4AwHO" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -40,6 +44,23 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1572824220139</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572824220139</updated>
+    </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

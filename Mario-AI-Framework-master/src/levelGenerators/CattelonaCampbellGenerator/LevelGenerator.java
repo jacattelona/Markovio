@@ -8,7 +8,9 @@ import engine.core.MarioLevelModel;
 import engine.core.MarioTimer;
 
 public class LevelGenerator implements MarioLevelGenerator{
-    private double CHANCE_BLOCK_COIN = 0.3;
+
+    final String NOTCH = "level-analysis/notchparam-level-analysis-formatted.csv";
+    final String ORIGINAL = "level-analysis/original-level-analysis-formatted.csv";
 
     Random rand;
 
@@ -16,44 +18,52 @@ public class LevelGenerator implements MarioLevelGenerator{
     private double CHANCE_BLOCK_POWER_UP = 0.1;                                         // chance a power-up is placed in a block platform
 
     private int groundHeight = 12;                                                      // height of ground-level in the level; increase number to decrease ground height, and vice versa
-    private String levelAnalysis = "level-analysis/notchparam-level-analysis.csv";      // relative filepath of the level analysis csv used to populate the probability table; can be changed to get different output
+    private String levelAnalysis = ORIGINAL;      // relative filepath of the level analysis csv used to populate the probability table; can be changed to get different output
 
     private double[][] probs = new double[8][7];                                        // probability table used in level generation
     private int currentState = 0;                                                       // tracks current state in level generation
 
     // constructor for level generator; parses level analysis csv upon creation
     public LevelGenerator() {
-        //readCSV();
+        readCSV();
     }
 
     public String getGeneratedLevel(MarioLevelModel model, MarioTimer timer){
-        // generate ground
-        for (int x = 0; x < model.getWidth(); x++){
-            if (x == 90){
-                x += generatePlatformPit(x, groundHeight, model);
-            }
-            else if (x > 0 && x%30 == 0){
-                x += generatePit(x, groundHeight, model);
-            }
-            else{
-                for (int y = groundHeight; y < model.getHeight(); y++){
-                    model.setBlock(x, y, MarioLevelModel.GROUND);
-                }
-            }
 
-            if (x > 0 && x%20 == 0){
-                generateRandomEnemies(x, groundHeight, 2, model);
+        //Place to start after generating initial ground
+        int xLocation = 10;
+
+        //Generate initial ground for player to stand on
+        for (int x = 0; x < xLocation; x++){
+            for (int y = groundHeight; y < model.getHeight(); y++){
+                model.setBlock(x, y, MarioLevelModel.GROUND);
             }
         }
 
-        // generate platforms
-        for (int x = 0; x < model.getWidth(); x++){
-            if (x > 0 && x%15 == 0)
-                x+= generateRandomPlatforms(x, groundHeight-4, model);
+        //while we aren't in a finish state
+        while (currentState != 8){
+            //Remember old starting location
+            int oldX = xLocation;
+            //Set new starting location
+            xLocation = MarkovChain(oldX, model);
+
+            //if we've reached farther than 130 blocks, we are in a finish state
+            if (xLocation >= 130)
+                currentState = 8;
         }
+
+        //generate the final blocks for the finish
+        for (int x = xLocation; x < 150; x++){
+            for (int y = groundHeight; y < model.getHeight(); y++){
+                model.setBlock(x, y, MarioLevelModel.GROUND);
+            }
+        }
+
+        //set start
         model.setBlock(1, 5, MarioLevelModel.MARIO_START);
         return model.getMap();
     }
+
 
     // gets the name of the level generator
     public String getGeneratorName(){
@@ -134,7 +144,11 @@ public class LevelGenerator implements MarioLevelGenerator{
                 model.setBlock(xLoc+j+i, yLoc-i, MarioLevelModel.PYRAMID_BLOCK);
             }
         }
-
+        for (int x = xLoc; x < xLoc+size; x++){
+            for (int y = yLoc+1; y < model.getHeight(); y++){
+                model.setBlock(x, y, MarioLevelModel.GROUND);
+            }
+        }
         // creates the mirror of the pyramid as needed
         if(mirror) {
             // if there is meant to be a pit between pyramid halves, create one
@@ -148,6 +162,11 @@ public class LevelGenerator implements MarioLevelGenerator{
             for (int i = 0; i < size; i++){
                 for (int j = 0; j < size - i; j++){
                     model.setBlock(xLoc+size+2+j, yLoc-i, MarioLevelModel.PYRAMID_BLOCK);
+                }
+            }
+            for (int x = xLoc+size+2; x < xLoc+size*2+2; x++){
+                for (int y = yLoc+1; y < model.getHeight(); y++){
+                    model.setBlock(x, y, MarioLevelModel.GROUND);
                 }
             }
 
@@ -171,8 +190,8 @@ public class LevelGenerator implements MarioLevelGenerator{
             int heightDiff = r.nextInt(7)-3;
 
             currentY += heightDiff;
-            if (currentY > 15)
-                currentY = 15;
+            if (currentY > 14)
+                currentY = 14;
 
             // platform width is random between 2 and 8
             int plat_width = r.nextInt(7)+2;
@@ -252,52 +271,55 @@ public class LevelGenerator implements MarioLevelGenerator{
         // randomly adjust the height of the platform set by a minor amount for the sake of variety; Mario can still make the jump
         yLoc -= r.nextInt(3)-1;
         // randomly decide which layout to use
+        int width = 0;
         int choice = r.nextInt(8);
         switch (choice) {
             case 1:
                 generatePlatform(xLoc, yLoc, 5, model);
+                width = 5;
                 break;
             case 2:
                 generatePlatform(xLoc, yLoc, 5, model);
                 generatePlatform(xLoc+2, yLoc-3, 1, model);
+                width = 5;
                 break;
             case 3:
                 generatePlatform(xLoc, yLoc, 3, model);
                 generatePlatform(xLoc+5, yLoc-4, 8, model);
+                width = 12;
                 break;
             case 4:
                 generatePlatform(xLoc, yLoc, 1, model);
                 generatePlatform(xLoc+2, yLoc, 1, model);
                 generatePlatform(xLoc+4, yLoc, 1, model);
                 generatePlatform(xLoc+2, yLoc-3, 1, model);
+                width = 5;
                 break;
             case 5:
                 generatePlatform(xLoc, yLoc, 5, model);
                 generatePlatform(xLoc, yLoc-3, 5, model);
+                width = 5;
                 break;
             default:
                 generatePlatform(xLoc, yLoc, 5, model);
                 generatePlatform(xLoc+1, yLoc-3, 3, model);
+                width = 5;
                 break;
         }
-        return 0;
+        return width;
     }
 
-    // processes the level analysis csv for probability table generation
     private void readCSV() {
+        System.out.println("READING CSV");
         try{
             BufferedReader csvReader = new BufferedReader(new FileReader(levelAnalysis));
             String row = "";
             int rowNum = 0;
-            while ((row = csvReader.readLine()) != null){
-                // read each row of the csv
+            for (int i = 0; i < 8; i++){
+                row = csvReader.readLine();
+
                 String[] levelData = row.split(",");
-
-                // prints out the csv data; for testing purposes
-                //for (int i = 0; i < levelData.length; i++) {System.out.println(levelData[i]);}
-
-                // populate the probability table with the csv data
-                for(int column = 0; column < levelData.length; column++){
+                for(int column = 0; column < 7; column++){
                     probs[rowNum][column] = Double.parseDouble(levelData[column]);
                     //System.out.print(probs[rowNum][column]);
                 }
@@ -306,60 +328,98 @@ public class LevelGenerator implements MarioLevelGenerator{
             }
 
         }
-
-        // currently do nothing in the event of either possible exception
         catch (FileNotFoundException e){ }
         catch (IOException e){ }
     }
 
+
     // for use in level generation
-    void MarkovChain(){
+    int MarkovChain(int xStart, MarioLevelModel model){
         Random r = new Random();
+        int newX = xStart;
 
-        //PROBS MUST BE FORMATTED AS FOLLOWS
-        //EACH CHANCE SHOULD BE THE SUM OF ALL CHANCES BEFORE IT, WITH THE LAST CHANCE BEING 1
-        //
-        //int[][] probs = new int[5][5];
-        //done with level generation
-        //currentState = 0;
-
-
+        //odds of choosing a specific transition in the Markov Chain
         double chance = r.nextDouble();
+
 
         //Generate Pipe
         if (chance <= probs[currentState][0]){
             currentState = 1;
+            generatePipe(xStart, groundHeight, model);
+
+            newX += r.nextInt(2)+2;
+            for (int x = xStart; x < newX; x++){
+                for (int y = groundHeight; y < model.getHeight(); y++){
+                    model.setBlock(x, y, MarioLevelModel.GROUND);
+                }
+            }
+
+            double enemyChance = r.nextDouble();
+            if (enemyChance < .2){
+                int numEnemies = r.nextInt(3)+1;
+                generateRandomEnemies(xStart, groundHeight -2, numEnemies, model);
+            }
         }
 
         //Generate Pipe Pit
         else if (chance > probs[currentState][0] && chance <= probs[currentState][1]){
             currentState = 2;
+            newX += generatePipePit(xStart, groundHeight, model);
+            System.out.println("PIPE PIT");
         }
 
         //Generate Pit
         else if (chance > probs[currentState][1] && chance <= probs[currentState][2]){
             currentState = 3;
+            newX += generatePit(xStart, groundHeight, model);
+            System.out.println("PIT,");
         }
 
         //Generate Platform Pit
         else if (chance > probs[currentState][2] && chance <= probs[currentState][3]){
             currentState = 4;
+            newX += generatePlatformPit(xStart, groundHeight, model);
+            double enemyChance = r.nextDouble();
+            if (enemyChance < .2){
+                int numEnemies = r.nextInt(3)+1;
+                generateRandomEnemies(xStart, groundHeight -2, numEnemies, model);
+            }
         }
 
         //Generate Mirrored Pyramid
         else if (chance > probs[currentState][3] && chance <= probs[currentState][4]){
             currentState = 5;
+            int size = r.nextInt(4)+3;
+            newX += generatePyramid(xStart, groundHeight-1, size, true, true, model);
         }
 
         //Generate Pyramid
         else if (chance > probs[currentState][4] && chance <= probs[currentState][5]){
             currentState = 6;
+            int size = r.nextInt(4)+3;
+            newX += generatePyramid(xStart, groundHeight-1, size, true, true, model);
+
         }
 
         //Generate Blocks
         else if (chance > probs[currentState][5] && chance <= probs[currentState][6]){
             currentState = 7;
+            newX += generateRandomPlatforms(xStart, groundHeight-3, model);
+
+            for (int x = xStart; x < newX; x++){
+                for (int y = groundHeight; y < model.getHeight(); y++){
+                    model.setBlock(x, y, MarioLevelModel.GROUND);
+                }
+            }
+            double enemyChance = r.nextDouble();
+            if (enemyChance < .2){
+                int numEnemies = r.nextInt(3)+1;
+                generateRandomEnemies(xStart, groundHeight -2, numEnemies, model);
+            }
         }
 
+
+
+        return newX;
     }
 }

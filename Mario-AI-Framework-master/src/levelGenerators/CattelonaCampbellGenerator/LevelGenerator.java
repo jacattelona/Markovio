@@ -345,10 +345,10 @@ public class LevelGenerator implements MarioLevelGenerator{
         //Generate Pipe
         if (chance <= probs[currentState][0]){
             currentState = 1;
-            generatePipe(xStart, groundHeight, model);
+            generatePipe(xStart+2, groundHeight, model);
 
-            newX += r.nextInt(2)+2;
-            for (int x = xStart; x < newX; x++){
+            newX += r.nextInt(2)+4;
+            for (int x = xStart+2; x < newX; x++){
                 for (int y = groundHeight; y < model.getHeight(); y++){
                     model.setBlock(x, y, MarioLevelModel.GROUND);
                 }

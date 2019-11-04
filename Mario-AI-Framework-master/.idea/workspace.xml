@@ -24,8 +24,8 @@
       <file leaf-file-name="LevelGenerator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="382" column="32" lean-forward="false" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
+            <state relative-caret-position="273">
+              <caret line="349" column="35" lean-forward="true" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1471#1472#0" expanded="true" />
@@ -462,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/levelGenerators/CattelonaCampbellGenerator/LevelGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="382" column="32" lean-forward="false" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
+        <state relative-caret-position="273">
+          <caret line="349" column="35" lean-forward="true" selection-start-line="349" selection-start-column="35" selection-end-line="349" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1471#1472#0" expanded="true" />

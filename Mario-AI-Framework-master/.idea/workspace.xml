@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a391933e-619e-479a-8b49-907b99f5c6f7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/levels/original/lvl-1-no-enemies.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/PlayLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayLevel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/BehaviorTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/BehaviorTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/levels/original/lvl-1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/levels/original/lvl-1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlayLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

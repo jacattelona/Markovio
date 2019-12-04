@@ -47,10 +47,10 @@ public class BehaviorTree {
 
         if (info[pos[0]+1][pos[1]] != 0){
             actions[4] = true;
-            actions[1] = true;
+            actions[1] = false;
         }
 
-        if (info[pos[0]+1][pos[1]+1] == 0) actions[4] = true;
+        if (info[pos[0]+1][15] == 0) actions[4] = true;
 
         int enemies[][] = model.getScreenEnemiesObservation(0);
         if (info[pos[0]+1][pos[1]] != 0 || info[pos[0]+2][pos[1]]!= 0)
@@ -62,6 +62,9 @@ public class BehaviorTree {
             actions[4] = true;
             actions[1] = false;
         }
+
+        System.out.println(actions[4]);
+        System.out.println(model.isMarioOnGround());
         return actions;
     }
 }

@@ -18,7 +18,7 @@ public class LevelGenerator implements MarioLevelGenerator{
     private double CHANCE_BLOCK_POWER_UP = 0.1;                                         // chance a power-up is placed in a block platform
 
     private int groundHeight = 12;                                                      // height of ground-level in the level; increase number to decrease ground height, and vice versa
-    private String levelAnalysis = ORIGINAL;      // relative filepath of the level analysis csv used to populate the probability table; can be changed to get different output
+    private String levelAnalysis = NOTCH;      // relative filepath of the level analysis csv used to populate the probability table; can be changed to get different output
 
     private double[][] probs = new double[8][7];                                        // probability table used in level generation
     private int currentState = 0;                                                       // tracks current state in level generation
@@ -391,6 +391,14 @@ public class LevelGenerator implements MarioLevelGenerator{
             currentState = 5;
             int size = r.nextInt(4)+3;
             newX += generatePyramid(xStart, groundHeight-1, size, true, true, model);
+
+            for (int x = newX; x < newX+3; x++){
+                for (int y = groundHeight; y < model.getHeight(); y++){
+                    model.setBlock(x, y, MarioLevelModel.GROUND);
+                }
+            }
+
+            newX += 3;
         }
 
         //Generate Pyramid

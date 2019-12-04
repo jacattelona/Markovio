@@ -11,23 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Agent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/agents/robinBaumgarten/Agent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AStarTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/agents/robinBaumgarten/AStarTree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-90">
-              <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+              <caret line="91" column="39" lean-forward="false" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
               <folding>
                 <element signature="method#search#0;class#AStarTree#0" expanded="false" />
                 <element signature="method#startSearch#0;class#AStarTree#0" expanded="false" />
@@ -70,11 +58,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BehaviorTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BehaviorTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="1323">
+              <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tasks.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/GenerateLevel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+              <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/PlayLevel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -116,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/src/engine/core/MarioForwardModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-294">
-              <caret line="26" column="66" lean-forward="true" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+              <caret line="26" column="66" lean-forward="false" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
               <folding>
                 <element signature="method#getSpriteTypeGeneralization#0;class#MarioForwardModel#0" expanded="false" />
                 <element signature="method#getBlockValueGeneralization#0;class#MarioForwardModel#0" expanded="false" />
@@ -163,6 +163,7 @@
         <option value="$PROJECT_DIR$/src/PlayLevel.java" />
         <option value="$PROJECT_DIR$/src/GenerateLevel.java" />
         <option value="$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java" />
+        <option value="$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java" />
       </list>
     </option>
   </component>
@@ -206,6 +207,13 @@
               <item name="Mario-AI-Framework-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="agents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mario-AI-Framework-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="agents" type="462c0819:PsiDirectoryNode" />
+              <item name="CattelonaCampbell" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Mario-AI-Framework-master" type="b2602c69:ProjectViewProjectNode" />
@@ -429,7 +437,7 @@
     <entry file="file://$PROJECT_DIR$/src/engine/core/MarioForwardModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
-          <caret line="26" column="66" lean-forward="true" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+          <caret line="26" column="66" lean-forward="false" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
           <folding>
             <element signature="method#getSpriteTypeGeneralization#0;class#MarioForwardModel#0" expanded="false" />
             <element signature="method#getBlockValueGeneralization#0;class#MarioForwardModel#0" expanded="false" />
@@ -460,7 +468,7 @@
     <entry file="file://$PROJECT_DIR$/src/GenerateLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -468,7 +476,7 @@
     <entry file="file://$PROJECT_DIR$/src/PlayLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -488,7 +496,7 @@
     <entry file="file://$PROJECT_DIR$/src/agents/robinBaumgarten/AStarTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
-          <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+          <caret line="91" column="39" lean-forward="false" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
           <folding>
             <element signature="method#search#0;class#AStarTree#0" expanded="false" />
             <element signature="method#startSearch#0;class#AStarTree#0" expanded="false" />
@@ -498,8 +506,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="1323">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

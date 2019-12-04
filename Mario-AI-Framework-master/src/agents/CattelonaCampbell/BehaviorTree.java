@@ -41,15 +41,13 @@ public class BehaviorTree {
         }
         */
 
-        boolean actions[] = new boolean[]{false, true, false, true, false};
+        boolean actions[] = new boolean[]{false, true, false, false, false};
         int info[][] = model.getScreenCompleteObservation(0, 0);
         int pos[] = model.getMarioScreenTilePos();
 
         if (info[pos[0]+1][pos[1]] != 0){
             actions[4] = true;
-            actions[1] = false;
-            actions[0] = true;
-            System.out.println("Test");
+            actions[1] = true;
         }
 
         if (info[pos[0]+1][pos[1]+1] == 0) actions[4] = true;
@@ -59,6 +57,11 @@ public class BehaviorTree {
             actions[4] = true;
 
         if (!model.isMarioOnGround()) actions[4] = true;
+
+        if (Tasks.HitQuestionBlock(model, timer)){
+            actions[4] = true;
+            actions[1] = false;
+        }
         return actions;
     }
 }

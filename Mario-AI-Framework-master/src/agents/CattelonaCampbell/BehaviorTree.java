@@ -2,11 +2,14 @@ package agents.CattelonaCampbell;
 
 import engine.core.MarioForwardModel;
 import engine.core.MarioTimer;
+import java.util.Arrays;
 
 public class BehaviorTree {
     boolean once = true;
+    Tasks tasks;
 
     public BehaviorTree(){
+        tasks = new Tasks();
     }
 
     public boolean[] chooseActions(MarioForwardModel model, MarioTimer timer){
@@ -41,7 +44,16 @@ public class BehaviorTree {
         }
         */
 
-        boolean actions[] = new boolean[]{false, true, false, true, false};
+        boolean actions[] = new boolean[]{false, false, false, false, false};
+        int dist[] = tasks.findClosestEnemy(model, 5);
+        if (!Arrays.equals(dist, new int[]{-1, -1})){
+            actions = tasks.HopOnEnemy(model, timer, 5);
+            System.out.println("Sensing");
+        }
+        else{
+
+        }
+
         int info[][] = model.getScreenCompleteObservation(0, 0);
         int pos[] = model.getMarioScreenTilePos();
 
@@ -59,6 +71,9 @@ public class BehaviorTree {
             actions[4] = true;
 
         if (!model.isMarioOnGround()) actions[4] = true;
+
+
+
         return actions;
     }
 }

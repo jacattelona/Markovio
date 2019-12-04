@@ -5,7 +5,8 @@ import engine.core.MarioTimer;
 
 public class Tasks {
 
-    public Tasks(){
+    public Tasks() {
+    }
 
     public static boolean HitQuestionBlock(MarioForwardModel model, MarioTimer timer){
         // get the info of what's on screen
@@ -60,7 +61,7 @@ public class Tasks {
 
     public boolean[] HopOnEnemy(MarioForwardModel model, MarioTimer timer, int radius){
         boolean actions[] = new boolean[]{false, false, false, false, false};
-        int enemyInfo[][] = model.getScreenEnemiesObservation(0);
+
         int pos[] = model.getMarioScreenTilePos();
 
         int closestEnemy[] = findClosestEnemy(model, radius);
@@ -75,6 +76,17 @@ public class Tasks {
         if (Math.abs(closestEnemy[0] - pos[0]) < radius && (pos[1] > closestEnemy[1]-1)){
             actions[4] = true;
         }
+
+        return actions;
+    }
+
+    public boolean[] HopOverObstacle(MarioForwardModel model, MarioTimer timer){
+        boolean actions[] = new boolean[]{false, false, false, false, false};
+        // get the info of what's on screen
+        int info[][] = model.getScreenSceneObservation(0);
+        // get Mario's location on screen
+        int pos[] = model.getMarioScreenTilePos();
+
 
         return actions;
     }

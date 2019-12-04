@@ -5,7 +5,7 @@ import engine.core.MarioTimer;
 import java.util.Arrays;
 
 public class BehaviorTree {
-    boolean once = true;
+    boolean jumpFlag = false;
     Tasks tasks;
 
     public BehaviorTree(){
@@ -44,26 +44,41 @@ public class BehaviorTree {
         }
         */
 
-        boolean actions[] = new boolean[]{false, true, false, false, false};
-        int info[][] = model.getScreenCompleteObservation(0, 0);
-        int pos[] = model.getMarioScreenTilePos();
+        boolean actions[] = new boolean[]{false, true, false, true, false};
 
         if (info[pos[0]+1][pos[1]] != 0){
             actions[4] = true;
             actions[1] = false;
         }
+        else{
+            int info[][] = model.getScreenCompleteObservation(0, 0);
+            int pos[] = model.getMarioScreenTilePos();
 
         if (info[pos[0]+1][15] == 0) actions[4] = true;
 
-        int enemies[][] = model.getScreenEnemiesObservation(0);
-        if (info[pos[0]+1][pos[1]] != 0 || info[pos[0]+2][pos[1]]!= 0)
-            actions[4] = true;
+            if (info[pos[0]+1][pos[1]+1] == 0) actions[4] = true;
 
-        if (!model.isMarioOnGround()) actions[4] = true;
+            if (info[pos[0]+1][pos[1]] != 0 || info[pos[0]+2][pos[1]]!= 0)
+                actions[4] = true;
 
-        if (Tasks.HitQuestionBlock(model, timer)){
-            actions[4] = true;
-            actions[1] = false;
+            if (!model.isMarioOnGround()) actions[4] = true;
+
+            if (Tasks.HitQuestionBlock(model, timer)){
+                actions[4] = true;
+                actions[1] = false;
+            }
+        }
+
+
+
+
+        if (jumpFlag && model.isMarioOnGround()){
+            jumpFlag = false;
+            actions[4] = false;
+        }
+
+        if (!jumpFlag && actions[4]){
+            jumpFlag = true;
         }
 
         System.out.println(actions[4]);

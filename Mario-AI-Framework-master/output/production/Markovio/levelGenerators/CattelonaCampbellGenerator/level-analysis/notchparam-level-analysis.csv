@@ -1,0 +1,9 @@
+,Pipes,Pipe Pit,Pit,Platforms,M-Pyramid,Pyramid,Blocks
+After Beginning,0,0,0,11,0,0,4
+After Pipes,0,0,0,2,0,0,0
+After Pipe-Pit,0,0,0,0,0,0,0
+After Pits,0,0,0,0,0,0,12
+After Platforms,0,0,0,0,0,0,40
+After M-Pyramids,0,0,0,0,0,0,0
+After Pyramids,0,0,0,0,0,0,10
+After Blocks,1,0,13,45,0,11,45

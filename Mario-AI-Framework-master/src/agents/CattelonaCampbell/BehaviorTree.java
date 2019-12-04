@@ -44,44 +44,27 @@ public class BehaviorTree {
         }
         */
 
-        boolean actions[] = new boolean[]{false, true, false, true, false};
+        boolean actions[] = new boolean[]{false, true, false, false, false};
         int info[][] = model.getScreenCompleteObservation(0, 0);
         int pos[] = model.getMarioScreenTilePos();
 
-        if (tasks.ObstacleAhead(model)){
-            actions = tasks.JumpOnObstacle(model, timer);
+        if (info[pos[0]+2][pos[1]] != 0){
+            actions[4] = true;
+            actions[1] = false;
+
+            if (!model.isMarioOnGround()) actions[4] = true;
         }
-        else if (!Arrays.equals(tasks.findClosestEnemy(model, 5), new int[]{-1, -1})){
-            actions = tasks.HopOnEnemy(model, timer, 5);
-        }
+        else if (info[pos[0]+1][15] == 0) actions[4] = true;
         else{
-            /*
-            if (info[pos[0]+1][pos[1]] != 0){
-                actions[4] = true;
-                actions[1] = true;
+
+            if (!Arrays.equals(tasks.findClosestEnemy(model, 5), new int[]{-1, -1})){
+                actions = tasks.HopOnEnemy(model, timer, 5);
             }
             else{
-                info = model.getScreenCompleteObservation(0, 0);
-                pos = model.getMarioScreenTilePos();
-
-                if (info[pos[0]+1][15] == 0) actions[4] = true;
-
-                //if (info[pos[0]+1][pos[1]+1] == 0) actions[4] = true;
-
-                if (info[pos[0]+1][pos[1]] != 0 || info[pos[0]+2][pos[1]]!= 0)
-                    actions[4] = true;
-
-                if (!model.isMarioOnGround()) actions[4] = true;
-
-                if (Tasks.HitQuestionBlock(model, timer)){
-                    actions[4] = true;
-                    actions[1] = false;
-                }
+                actions = tasks.HitQuestionBlock(model, timer);
             }
             */
         }
-
-
 
         if (jumpFlag && model.isMarioOnGround()){
             jumpFlag = false;

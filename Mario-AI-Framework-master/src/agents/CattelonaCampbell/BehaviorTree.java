@@ -63,6 +63,7 @@ public class BehaviorTree {
             else{
                 actions = tasks.HitQuestionBlock(model, timer);
             }
+            */
         }
 
         if (jumpFlag && model.isMarioOnGround()){

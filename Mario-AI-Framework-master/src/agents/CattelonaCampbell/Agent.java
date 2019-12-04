@@ -6,18 +6,20 @@ import engine.core.MarioTimer;
 import engine.helper.MarioActions;
 
 public class Agent implements MarioAgent{
+    private boolean[] actions;
+    private BehaviorTree tree;
 
     public void initialize(MarioForwardModel model, MarioTimer timer){
-
+        actions = new boolean[MarioActions.numberOfActions()];
+        tree = new BehaviorTree();
     }
 
     public boolean[] getActions(MarioForwardModel model, MarioTimer timer){
-        boolean a[] = {false};
-
-        return a;
+        actions = tree.chooseActions(model, timer);
+        return actions;
     }
 
     public String getAgentName(){
-        return "CattelonaCampbell Agent";
+        return "CattelonaCampbellAgent";
     }
 }

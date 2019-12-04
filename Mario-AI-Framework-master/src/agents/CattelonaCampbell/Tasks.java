@@ -35,6 +35,7 @@ public class Tasks {
         return Math.abs(Math.sqrt(x + y));
     }
 
+
     public int[] findClosestEnemy(MarioForwardModel model, int radius){
         int closestEnemy[] = new int[]{-1, -1};
         double closestDistance = 1000;
@@ -88,6 +89,49 @@ public class Tasks {
         int pos[] = model.getMarioScreenTilePos();
 
 
+        return actions;
+    }
+
+    public boolean ObstacleAhead(MarioForwardModel model){
+        int info[][] = model.getScreenSceneObservation(1);
+        int pos[] = model.getMarioScreenTilePos();
+
+        for (int y = pos[1]; y >= pos[1] - 2; y--){
+            for (int x = pos[0]; x <= pos[0] + 3; x++){
+                if (y >= 0 && y < model.obsGridHeight){
+                    //int blockVal = MarioForwardModel.getBlockValueGeneralization(info[x][y], 1);
+                    int blockVal = info[x][y];
+                    if (blockVal == MarioForwardModel.OBS_SOLID || blockVal == MarioForwardModel.OBS_CANNON || blockVal == MarioForwardModel.OBS_PIPE){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    public boolean[] JumpOnObstacle(MarioForwardModel model, MarioTimer timer){
+        boolean actions[] = new boolean[]{false, false, false, false, false};
+        int info[][] = model.getScreenSceneObservation(1);
+        int pos[] = model.getMarioScreenTilePos();
+
+        actions[4] = true;
+
+        boolean above = false;
+        for (int y = pos[1]; y < pos[1] + 3; y++){
+            if (y < info[pos[0]].length){
+                if (
+                        info[pos[0]][y] == MarioForwardModel.OBS_SOLID ||
+                        info[pos[0]][y] == MarioForwardModel.OBS_PLATFORM ||
+                        info[pos[0]][y] == MarioForwardModel.OBS_PIPE
+                        ){
+                    above = true;
+
+                }
+            }
+        }
+
+        if (!above)
+            actions[2] = true;
         return actions;
     }
 }

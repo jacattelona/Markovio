@@ -48,10 +48,14 @@ public class BehaviorTree {
         int info[][] = model.getScreenCompleteObservation(0, 0);
         int pos[] = model.getMarioScreenTilePos();
 
-        if (!Arrays.equals(tasks.findClosestEnemy(model, 5), new int[]{-1, -1})){
+        if (tasks.ObstacleAhead(model)){
+            actions = tasks.JumpOnObstacle(model, timer);
+        }
+        else if (!Arrays.equals(tasks.findClosestEnemy(model, 5), new int[]{-1, -1})){
             actions = tasks.HopOnEnemy(model, timer, 5);
         }
         else{
+            /*
             if (info[pos[0]+1][pos[1]] != 0){
                 actions[4] = true;
                 actions[1] = true;
@@ -74,9 +78,8 @@ public class BehaviorTree {
                     actions[1] = false;
                 }
             }
+            */
         }
-
-
 
 
 

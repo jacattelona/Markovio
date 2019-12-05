@@ -134,7 +134,7 @@ public class Tasks {
         }
 
         if (!above)
-            actions[2] = true;
+            actions[1] = true;
         return actions;
     }
 }

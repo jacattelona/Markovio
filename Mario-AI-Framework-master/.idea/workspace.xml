@@ -4,8 +4,6 @@
     <list default="true" id="a391933e-619e-479a-8b49-907b99f5c6f7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/PlayLevel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/PlayLevel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/BehaviorTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/BehaviorTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/Tasks.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/agents/CattelonaCampbell/Tasks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlayLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlayLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agents/CattelonaCampbell/BehaviorTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/agents/CattelonaCampbell/Tasks.java" afterDir="false" />
@@ -30,12 +28,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-197" />
-    <option name="y" value="117" />
-    <option name="width" value="852" />
-    <option name="height" value="1028" />
   </component>
   <component name="ProjectId" id="1T7vy8oH1DwHKipVm2Qwkn4AwHO" />
   <component name="PropertiesComponent">

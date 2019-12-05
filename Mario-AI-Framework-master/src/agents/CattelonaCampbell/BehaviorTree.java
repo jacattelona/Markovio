@@ -48,15 +48,22 @@ public class BehaviorTree {
         int info[][] = model.getScreenCompleteObservation(0, 0);
         int pos[] = model.getMarioScreenTilePos();
 
+        // if obstacle in front of Mario, jump over it
         if (tasks.ObstacleAhead(model)){
             actions = tasks.JumpOnObstacle(model, timer);
         }
         // TODO: else if gap jump across
+        // TODO: this doesn't work yet
+        else if (info[pos[0] + 1][15] != 17
+                    && info[pos[0] + 1][pos[1] + 1] == 0){
+            actions[4] = true;
+        }
         else if (!Arrays.equals(new int[]{-1, -1}, tasks.findClosestEnemy(model, 5))) {
-            actions = tasks.HopOnEnemy(model, timer, 5);
+            //actions = tasks.HopOnEnemy(model, timer, 5);
         }
         // TODO: else if power up on screen, catch it
         // TODO: else if question block punch it
+        // else go right
 
         if (jumpFlag && model.isMarioOnGround()){
             jumpFlag = false;

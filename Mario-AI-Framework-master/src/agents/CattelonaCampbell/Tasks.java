@@ -45,7 +45,7 @@ public class Tasks {
         int enemyInfo[][] = model.getScreenEnemiesObservation(0);
         int pos[] = model.getMarioScreenTilePos();
 
-        for (int y = pos[1] - radius; y < pos[1] + radius; y++){
+        for (int y = pos[1] - 1; y < pos[1] + radius; y++){
             for (int x = pos[0] - radius; x < pos[1] + radius; x++){
                 if ((y >= 0 && x >= 0) && (y < enemyInfo[0].length && x < enemyInfo.length)){
                     if (2 <= enemyInfo[x][y] && enemyInfo[x][y] <= 7){
